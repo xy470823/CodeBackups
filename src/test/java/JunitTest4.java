@@ -113,6 +113,7 @@ public class JunitTest4 {
     @Test
     public void testException2() throws ParseException {
         String dateS = "2022-03-17 23:59:59";
-        Date date = DateUtils.parseDate(dateS,null);
+        //Date date = DateUtils.parseDate(dateS,null);
+        System.out.println(this.getClass().getName());
     }
 }
