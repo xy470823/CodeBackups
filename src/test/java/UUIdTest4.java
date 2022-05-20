@@ -1,7 +1,8 @@
 import com.alibaba.fastjson.JSON;
-import org.apache.commons.collections.ListUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.junit.Test;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +12,18 @@ import java.util.List;
 
 public class UUIdTest4 {
 
+    @Test
+    public void getSimpleDateFormat() throws ParseException {
+        Date date = new Date();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String s = dateFormat.format(date);
+        System.out.println("1--当前日期："+ s);
+        System.out.println("2--当前日期："+ new Date());
+        System.out.println("3--当前日期："+ dateFormat.parse(s));
+
+        System.out.println("4--当前日期："+ DateUtils.parseDate(s, new String[]{"yyyy-MM-dd HH:mm:ss"}));
+    }
     @Test
     public void getUUid(){
         for (int i = 0; i < 5000; i++) {
